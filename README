@@ -1,1 +1,7 @@
+NOT WORKING YET!
+
 Migrates Trac project data to Codebase.
+  * uses Trac DB API to obtain data
+  * writes data to XML in Codebase schema
+  * reads XML and applies it using Codebase API.
+
