@@ -1,6 +1,10 @@
+"""
+Writes Trac DB as XML in Codebase schema, on stdout.
+"""
+
 import logging
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger('migration')
+logger = logging.getLogger('t2x')
 
 import base64
 import datetime
@@ -51,7 +55,7 @@ env = Environment(projenv)
 @with_transaction(env)
 def main(db):
     """ Output XML in the Codebase schema. """
-    cursor = db.cursor()
+
     priorities = set()
     statuses = set()
 
@@ -64,79 +68,63 @@ def main(db):
 """
 
     # First, gather status and priority labels.
+
     q = """select type,name,value from enum"""
+    cursor = db.cursor()
     cursor.execute(q)
-    idd = 0
+    idd = 100
     for typee,name,value in cursor:
         if typee == 'status':
             xml += """
 <ticketing-status>
-  <id type="integer">%d</id>
   <name>%s</name>
   <background-colour>9ac130</background-colour>
   <order type="integer">%d</order>
   <treat-as-closed type="boolean">false</treat-as-closed>
 </ticketing-status>
-""" % (idd,name,int(value))
+""" % (name,int(value))
             statuses.add(name)
 
         elif typee == 'priority':
             xml += """
 <ticketing-priority>
-  <id type="integer">%d</id>
   <name>%s</name>
   <colour>666666</colour>
   <default type="boolean">false</default>
   <position type="integer">%d</position>
 </ticketing-priority>
-""" % (idd,name,int(value))
+""" % (name,int(value))
             priorities.add(name)
 
         idd += 1
 
-    print xml
-    return
-    
+    # Milestones.
+
     q = """select name,due,completed,description from milestone"""
     cursor = db.cursor()
     cursor.execute(q)
 
-    logger.debug('%s milestones.' % len(cursor.rows))
-
-
-    idd = 2
     for(name,
         due,
         completed,
         description) in cursor:
         
         due = tractime2codebasetime(due) 
-
        
-        xml += """
-<ticketing-milestone>
-  <id type="integer">%s</id>
-  <name>%s</name>
-  <start-at type="date">%s</start-at>
-  <deadline type="date">%s</deadline>
-  <parent-id type="integer" nil="true"/>
-  <status>%s</status>
-</ticketing-milestone>
-""" % (idd, name, due, due, completed)
-
-        idd = idd+1
+        xml += '<ticketing-milestone><name>%s</name><description>%s</description><start-at type="date">%s</start-at><deadline type="date">%s</deadline><parent-id type="integer" nil="true"/><status>%s</status></ticketing-milestone>' % (name, description, due, due, 'active')
         
+    # Tickets.
 
     q = 'select id,type,time,changetime,component,severity,priority,owner,reporter,cc,version,milestone,status,resolution,summary,description,keywords from ticket'
+    cursor = db.cursor()
     cursor.execute(q)
-    idd = 0
+    idd = 2
     for (idd,typee,time,changetime,component,severity,priority,
          owner,reporter,cc,version,milestone,status,resolution,
          summary,description,keywords) in cursor:
         
         xml += """
 <ticket>
-  <ticket-id type="integer">%s</ticket-id>
   <summary>%s</summary>
   <ticket-type>%s</ticket-type>
   <reporter-id type="integer">%s</reporter-id>
@@ -148,38 +136,17 @@ def main(db):
   <status-id type="integer">%s</status-id>
   <milestone-id type="integer" nil="true"/>
 </ticket>
-""" % (idd, summary, typee, reporter,
+""" % (summary, typee, reporter,
        owner, reporter, owner, component, priority, status)
 
-        if False:    
-            doc = Document()
-            root = doc.createElement("ticket")
-            doc.appendChild(root)
-            
-            e = doc.createElement("summary")
-            t = doc.createTextNode(escape(summary))
-            e.appendChild(t)
-            root.appendChild(e)
-            
-            e = doc.createElement("reporter")
-            t = doc.createTextNode(escape(owner))
-            e.appendChild(t)
-            root.appendChild(e)
-            
-            e = doc.createElement("ticket-type")
-            t = doc.createTextNode(escape(typee))
-            e.appendChild(t)
-            root.appendChild(e)
-            
-            print doc.toprettyxml(indent="  ")
+    idd = idd+1
 
-        print xml
-        idd = idd+1
-
+    # Ticket change history.
 
     q = 'select ticket,time,author,field,oldvalue,newvalue from ticket_change'
+    cursor = db.cursor()
     cursor.execute(q)
-    idd = 0
+    idd = 1
     for ticket,time,author,field,oldvalue,newvalue in cursor:
         logging.info(field)
         if field == 'status':
@@ -223,5 +190,4 @@ def main(db):
 
 
     xml += '</project>'
-
     print xml
