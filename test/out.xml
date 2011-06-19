@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  -- Dump of Trac database as XML tree.
+  -- Elements conform to Codebase API schema.
+  -->
+<project>
+
+<ticketing-status>
+  <name>new</name>
+  <background-colour>9ac130</background-colour>
+  <order type="integer">1</order>
+  <treat-as-closed type="boolean">false</treat-as-closed>
+</ticketing-status>
+
+<ticketing-status>
+  <name>assigned</name>
+  <background-colour>9ac130</background-colour>
+  <order type="integer">2</order>
+  <treat-as-closed type="boolean">false</treat-as-closed>
+</ticketing-status>
+
+<ticketing-status>
+  <name>reopened</name>
+  <background-colour>9ac130</background-colour>
+  <order type="integer">3</order>
+  <treat-as-closed type="boolean">false</treat-as-closed>
+</ticketing-status>
+
+<ticketing-status>
+  <name>closed</name>
+  <background-colour>9ac130</background-colour>
+  <order type="integer">4</order>
+  <treat-as-closed type="boolean">false</treat-as-closed>
+</ticketing-status>
+
+<ticketing-priority>
+  <name>blocker</name>
+  <colour>666666</colour>
+  <default type="boolean">false</default>
+  <position type="integer">1</position>
+</ticketing-priority>
+
+<ticketing-priority>
+  <name>critical</name>
+  <colour>666666</colour>
+  <default type="boolean">false</default>
+  <position type="integer">2</position>
+</ticketing-priority>
+
+<ticketing-priority>
+  <name>major</name>
+  <colour>666666</colour>
+  <default type="boolean">false</default>
+  <position type="integer">3</position>
+</ticketing-priority>
+
+<ticketing-priority>
+  <name>minor</name>
+  <colour>666666</colour>
+  <default type="boolean">false</default>
+  <position type="integer">4</position>
+</ticketing-priority>
+
+<ticketing-priority>
+  <name>trivial</name>
+  <colour>666666</colour>
+  <default type="boolean">false</default>
+  <position type="integer">5</position>
+</ticketing-priority>
+<ticketing-milestone><name>Next Release</name><description></description><start-at type="date">1969-12-31</start-at><deadline type="date">1969-12-31</deadline><parent-id type="integer" nil="true"/><status>active</status></ticketing-milestone><ticketing-milestone><name>iPad POC</name><description>A playable version.</description><start-at type="date">2011-5-13</start-at><deadline type="date">2011-5-13</deadline><parent-id type="integer" nil="true"/><status>active</status></ticketing-milestone><ticketing-milestone><name>Qt POC</name><description>Basic functions from Cocoa port only.</description><start-at type="date">2011-4-30</start-at><deadline type="date">2011-4-30</deadline><parent-id type="integer" nil="true"/><status>active</status></ticketing-milestone>
+<ticket>
+  <summary>setting midi out to None does not turn off output</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">major</priority-id>
+  <status-id type="integer">closed</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>i'm a user.</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">ghee</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>ghee</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">major</priority-id>
+  <status-id type="integer">closed</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Input in Play Relative mode produces events but no sound</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">major</priority-id>
+  <status-id type="integer">closed</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>mouse on lights sends RESET/INVALID/BANK SELECT/CONTINUE/CLOCK MIDI CC messages</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">major</priority-id>
+  <status-id type="integer">closed</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>command-option- [8,-,=] don't switch the MIDI channel</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">major</priority-id>
+  <status-id type="integer">closed</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Have both sides of wheel toggle reset pitch bend</summary>
+  <ticket-type>enhancement</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">minor</priority-id>
+  <status-id type="integer">new</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Sort out Reorient mode</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">major</priority-id>
+  <status-id type="integer">assigned</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Sort out Play Relative mode</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">major</priority-id>
+  <status-id type="integer">new</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Migrate lights out</summary>
+  <ticket-type>enhancement</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">minor</priority-id>
+  <status-id type="integer">new</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Possible problems on PPC machines</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">minor</priority-id>
+  <status-id type="integer">new</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Resizable lights</summary>
+  <ticket-type>enhancement</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">trivial</priority-id>
+  <status-id type="integer">new</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Pitch bend stops working after some amount of time</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">minor</priority-id>
+  <status-id type="integer">new</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>stuck notes</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">major</priority-id>
+  <status-id type="integer">assigned</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Patch select should go out on the current channel</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">minor</priority-id>
+  <status-id type="integer">assigned</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>Cross-platform Qt flavour</summary>
+  <ticket-type>enhancement</ticket-type>
+  <reporter-id type="integer">rhaleblian</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>rhaleblian</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">minor</priority-id>
+  <status-id type="integer">new</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket>
+  <summary>lights window comes up black if you minimize it and then maximize later on 10.5 (but not 10.4)</summary>
+  <ticket-type>defect</ticket-type>
+  <reporter-id type="integer">lgruenbaum</reporter-id>
+  <assignee-id type="integer">rhaleblian</assignee-id>
+  <assignee>lgruenbaum</assignee>
+  <reporter>rhaleblian</reporter>
+  <category-id type="integer">sam</category-id>
+  <priority-id type="integer">minor</priority-id>
+  <status-id type="integer">new</status-id>
+  <milestone-id type="integer" nil="true"/>
+</ticket>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>closed</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was new.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>closed</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was new.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>closed</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was new.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>assigned</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was new.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>assigned</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was new.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>closed</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was assigned.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>reopened</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was closed.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>new</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was reopened.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>assigned</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was new.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>closed</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was assigned.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>assigned</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was new.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>assigned</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was new.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>assigned</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was new.</summary>
+    </changes>
+</ticket-note>
+
+<ticket-note>
+    <content>Status Updated</content>
+    <changes>
+        <status-id>closed</status-id>
+        <assignee-id></assignee-id>
+        <milestone-id></milestone-id>
+        <summary>The previous status was assigned.</summary>
+    </changes>
+</ticket-note>
+</project>
